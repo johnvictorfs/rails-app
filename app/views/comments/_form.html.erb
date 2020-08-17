@@ -1,0 +1,21 @@
+<%= form_with scope: :comment, local: true do |form| %>
+<div class="field">
+    <%= form.label(:name, class: "label") %>
+    <div class="control">
+        <%= form.text_field(:name, class: "input") %>
+    </div>
+</div>
+
+<div class="field">
+    <%= form.label(:comment, class: "label") %>
+    <div class="control">
+        <%= form.text_area(:comment, class: "textarea") %>
+    </div>
+</div>
+
+<div class="columns is-centered">
+    <div class="column">
+        <%= form.submit('Save', class: "button is-primary is-fullwidth") %>
+    </div>
+</div>
+<% end %>

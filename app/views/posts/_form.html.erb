@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title" style="font-size: 26px">
+                        <%= yield :page_title %>
+                    </p>
+                </div>
+
+                <div class="card-content">
+                    <%= form_with scope: :post, url: posts_path, local: true do |form| %>
+
+                    <div class="field">
+                        <%= form.label(:title, class: "label") %>
+                        <div class="control">
+                            <%= form.text_field(:title, class: "input") %>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <%= form.label(:description, class: "label") %>
+                        <div class="control">
+                            <%= form.text_field(:description, class: "input") %>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <%= form.label(:content, class: "label") %>
+                        <div class="control">
+                            <%= form.text_area(:content, class: "textarea") %>
+                        </div>
+                    </div>
+
+                    <div class="columns is-centered">
+                        <div class="column">
+                            <%= form.submit(@post.created_at ? 'Update' : 'Create', class: "button is-primary is-fullwidth") %>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
